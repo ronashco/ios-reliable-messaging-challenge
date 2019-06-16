@@ -1,0 +1,591 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		C4576DAC22B653E200B960D7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4576DAB22B653E200B960D7 /* AppDelegate.swift */; };
+		C4576DAE22B653E200B960D7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4576DAD22B653E200B960D7 /* ViewController.swift */; };
+		C4576DB122B653E200B960D7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4576DAF22B653E200B960D7 /* Main.storyboard */; };
+		C4576DB322B653E300B960D7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C4576DB222B653E300B960D7 /* Assets.xcassets */; };
+		C4576DB622B653E300B960D7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4576DB422B653E300B960D7 /* LaunchScreen.storyboard */; };
+		C4576DC122B653E300B960D7 /* IOS_Reliable_Messaging_ChallengeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4576DC022B653E300B960D7 /* IOS_Reliable_Messaging_ChallengeTests.swift */; };
+		C4576DCC22B653E300B960D7 /* IOS_Reliable_Messaging_ChallengeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4576DCB22B653E300B960D7 /* IOS_Reliable_Messaging_ChallengeUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		C4576DBD22B653E300B960D7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C4576DA022B653E100B960D7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C4576DA722B653E100B960D7;
+			remoteInfo = "IOS Reliable Messaging Challenge";
+		};
+		C4576DC822B653E300B960D7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C4576DA022B653E100B960D7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C4576DA722B653E100B960D7;
+			remoteInfo = "IOS Reliable Messaging Challenge";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		C4576DA822B653E200B960D7 /* IOS Reliable Messaging Challenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "IOS Reliable Messaging Challenge.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C4576DAB22B653E200B960D7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		C4576DAD22B653E200B960D7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		C4576DB022B653E200B960D7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		C4576DB222B653E300B960D7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C4576DB522B653E300B960D7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		C4576DB722B653E300B960D7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C4576DBC22B653E300B960D7 /* IOS Reliable Messaging ChallengeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "IOS Reliable Messaging ChallengeTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C4576DC022B653E300B960D7 /* IOS_Reliable_Messaging_ChallengeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOS_Reliable_Messaging_ChallengeTests.swift; sourceTree = "<group>"; };
+		C4576DC222B653E300B960D7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C4576DC722B653E300B960D7 /* IOS Reliable Messaging ChallengeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "IOS Reliable Messaging ChallengeUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C4576DCB22B653E300B960D7 /* IOS_Reliable_Messaging_ChallengeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOS_Reliable_Messaging_ChallengeUITests.swift; sourceTree = "<group>"; };
+		C4576DCD22B653E300B960D7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C4576DA522B653E100B960D7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C4576DB922B653E300B960D7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C4576DC422B653E300B960D7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		C4576D9F22B653E100B960D7 = {
+			isa = PBXGroup;
+			children = (
+				C4576DAA22B653E200B960D7 /* IOS Reliable Messaging Challenge */,
+				C4576DBF22B653E300B960D7 /* IOS Reliable Messaging ChallengeTests */,
+				C4576DCA22B653E300B960D7 /* IOS Reliable Messaging ChallengeUITests */,
+				C4576DA922B653E200B960D7 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		C4576DA922B653E200B960D7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C4576DA822B653E200B960D7 /* IOS Reliable Messaging Challenge.app */,
+				C4576DBC22B653E300B960D7 /* IOS Reliable Messaging ChallengeTests.xctest */,
+				C4576DC722B653E300B960D7 /* IOS Reliable Messaging ChallengeUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C4576DAA22B653E200B960D7 /* IOS Reliable Messaging Challenge */ = {
+			isa = PBXGroup;
+			children = (
+				C4576DAB22B653E200B960D7 /* AppDelegate.swift */,
+				C4576DAD22B653E200B960D7 /* ViewController.swift */,
+				C4576DAF22B653E200B960D7 /* Main.storyboard */,
+				C4576DB222B653E300B960D7 /* Assets.xcassets */,
+				C4576DB422B653E300B960D7 /* LaunchScreen.storyboard */,
+				C4576DB722B653E300B960D7 /* Info.plist */,
+			);
+			path = "IOS Reliable Messaging Challenge";
+			sourceTree = "<group>";
+		};
+		C4576DBF22B653E300B960D7 /* IOS Reliable Messaging ChallengeTests */ = {
+			isa = PBXGroup;
+			children = (
+				C4576DC022B653E300B960D7 /* IOS_Reliable_Messaging_ChallengeTests.swift */,
+				C4576DC222B653E300B960D7 /* Info.plist */,
+			);
+			path = "IOS Reliable Messaging ChallengeTests";
+			sourceTree = "<group>";
+		};
+		C4576DCA22B653E300B960D7 /* IOS Reliable Messaging ChallengeUITests */ = {
+			isa = PBXGroup;
+			children = (
+				C4576DCB22B653E300B960D7 /* IOS_Reliable_Messaging_ChallengeUITests.swift */,
+				C4576DCD22B653E300B960D7 /* Info.plist */,
+			);
+			path = "IOS Reliable Messaging ChallengeUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C4576DA722B653E100B960D7 /* IOS Reliable Messaging Challenge */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C4576DD022B653E300B960D7 /* Build configuration list for PBXNativeTarget "IOS Reliable Messaging Challenge" */;
+			buildPhases = (
+				C4576DA422B653E100B960D7 /* Sources */,
+				C4576DA522B653E100B960D7 /* Frameworks */,
+				C4576DA622B653E100B960D7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "IOS Reliable Messaging Challenge";
+			productName = "IOS Reliable Messaging Challenge";
+			productReference = C4576DA822B653E200B960D7 /* IOS Reliable Messaging Challenge.app */;
+			productType = "com.apple.product-type.application";
+		};
+		C4576DBB22B653E300B960D7 /* IOS Reliable Messaging ChallengeTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C4576DD322B653E300B960D7 /* Build configuration list for PBXNativeTarget "IOS Reliable Messaging ChallengeTests" */;
+			buildPhases = (
+				C4576DB822B653E300B960D7 /* Sources */,
+				C4576DB922B653E300B960D7 /* Frameworks */,
+				C4576DBA22B653E300B960D7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C4576DBE22B653E300B960D7 /* PBXTargetDependency */,
+			);
+			name = "IOS Reliable Messaging ChallengeTests";
+			productName = "IOS Reliable Messaging ChallengeTests";
+			productReference = C4576DBC22B653E300B960D7 /* IOS Reliable Messaging ChallengeTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		C4576DC622B653E300B960D7 /* IOS Reliable Messaging ChallengeUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C4576DD622B653E300B960D7 /* Build configuration list for PBXNativeTarget "IOS Reliable Messaging ChallengeUITests" */;
+			buildPhases = (
+				C4576DC322B653E300B960D7 /* Sources */,
+				C4576DC422B653E300B960D7 /* Frameworks */,
+				C4576DC522B653E300B960D7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C4576DC922B653E300B960D7 /* PBXTargetDependency */,
+			);
+			name = "IOS Reliable Messaging ChallengeUITests";
+			productName = "IOS Reliable Messaging ChallengeUITests";
+			productReference = C4576DC722B653E300B960D7 /* IOS Reliable Messaging ChallengeUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C4576DA022B653E100B960D7 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1020;
+				LastUpgradeCheck = 1020;
+				ORGANIZATIONNAME = Pushe;
+				TargetAttributes = {
+					C4576DA722B653E100B960D7 = {
+						CreatedOnToolsVersion = 10.2.1;
+					};
+					C4576DBB22B653E300B960D7 = {
+						CreatedOnToolsVersion = 10.2.1;
+						TestTargetID = C4576DA722B653E100B960D7;
+					};
+					C4576DC622B653E300B960D7 = {
+						CreatedOnToolsVersion = 10.2.1;
+						TestTargetID = C4576DA722B653E100B960D7;
+					};
+				};
+			};
+			buildConfigurationList = C4576DA322B653E100B960D7 /* Build configuration list for PBXProject "IOS Reliable Messaging Challenge" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = C4576D9F22B653E100B960D7;
+			productRefGroup = C4576DA922B653E200B960D7 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C4576DA722B653E100B960D7 /* IOS Reliable Messaging Challenge */,
+				C4576DBB22B653E300B960D7 /* IOS Reliable Messaging ChallengeTests */,
+				C4576DC622B653E300B960D7 /* IOS Reliable Messaging ChallengeUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C4576DA622B653E100B960D7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C4576DB622B653E300B960D7 /* LaunchScreen.storyboard in Resources */,
+				C4576DB322B653E300B960D7 /* Assets.xcassets in Resources */,
+				C4576DB122B653E200B960D7 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C4576DBA22B653E300B960D7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C4576DC522B653E300B960D7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C4576DA422B653E100B960D7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C4576DAE22B653E200B960D7 /* ViewController.swift in Sources */,
+				C4576DAC22B653E200B960D7 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C4576DB822B653E300B960D7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C4576DC122B653E300B960D7 /* IOS_Reliable_Messaging_ChallengeTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C4576DC322B653E300B960D7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C4576DCC22B653E300B960D7 /* IOS_Reliable_Messaging_ChallengeUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		C4576DBE22B653E300B960D7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C4576DA722B653E100B960D7 /* IOS Reliable Messaging Challenge */;
+			targetProxy = C4576DBD22B653E300B960D7 /* PBXContainerItemProxy */;
+		};
+		C4576DC922B653E300B960D7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C4576DA722B653E100B960D7 /* IOS Reliable Messaging Challenge */;
+			targetProxy = C4576DC822B653E300B960D7 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		C4576DAF22B653E200B960D7 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C4576DB022B653E200B960D7 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		C4576DB422B653E300B960D7 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C4576DB522B653E300B960D7 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		C4576DCE22B653E300B960D7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		C4576DCF22B653E300B960D7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C4576DD122B653E300B960D7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = K3HQYDF942;
+				INFOPLIST_FILE = "IOS Reliable Messaging Challenge/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "ir.pushe.IOS-Reliable-Messaging-Challenge";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		C4576DD222B653E300B960D7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = K3HQYDF942;
+				INFOPLIST_FILE = "IOS Reliable Messaging Challenge/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "ir.pushe.IOS-Reliable-Messaging-Challenge";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		C4576DD422B653E300B960D7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = K3HQYDF942;
+				INFOPLIST_FILE = "IOS Reliable Messaging ChallengeTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "ir.pushe.IOS-Reliable-Messaging-ChallengeTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/IOS Reliable Messaging Challenge.app/IOS Reliable Messaging Challenge";
+			};
+			name = Debug;
+		};
+		C4576DD522B653E300B960D7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = K3HQYDF942;
+				INFOPLIST_FILE = "IOS Reliable Messaging ChallengeTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "ir.pushe.IOS-Reliable-Messaging-ChallengeTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/IOS Reliable Messaging Challenge.app/IOS Reliable Messaging Challenge";
+			};
+			name = Release;
+		};
+		C4576DD722B653E300B960D7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = K3HQYDF942;
+				INFOPLIST_FILE = "IOS Reliable Messaging ChallengeUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "ir.pushe.IOS-Reliable-Messaging-ChallengeUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "IOS Reliable Messaging Challenge";
+			};
+			name = Debug;
+		};
+		C4576DD822B653E300B960D7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = K3HQYDF942;
+				INFOPLIST_FILE = "IOS Reliable Messaging ChallengeUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "ir.pushe.IOS-Reliable-Messaging-ChallengeUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "IOS Reliable Messaging Challenge";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C4576DA322B653E100B960D7 /* Build configuration list for PBXProject "IOS Reliable Messaging Challenge" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C4576DCE22B653E300B960D7 /* Debug */,
+				C4576DCF22B653E300B960D7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C4576DD022B653E300B960D7 /* Build configuration list for PBXNativeTarget "IOS Reliable Messaging Challenge" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C4576DD122B653E300B960D7 /* Debug */,
+				C4576DD222B653E300B960D7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C4576DD322B653E300B960D7 /* Build configuration list for PBXNativeTarget "IOS Reliable Messaging ChallengeTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C4576DD422B653E300B960D7 /* Debug */,
+				C4576DD522B653E300B960D7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C4576DD622B653E300B960D7 /* Build configuration list for PBXNativeTarget "IOS Reliable Messaging ChallengeUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C4576DD722B653E300B960D7 /* Debug */,
+				C4576DD822B653E300B960D7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = C4576DA022B653E100B960D7 /* Project object */;
+}
