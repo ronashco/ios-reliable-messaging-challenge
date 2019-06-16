@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2D50E716AD808909769F9705 /* Pods_IOS_Reliable_Messaging_ChallengeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFF34F13AC935EAE2004E5ED /* Pods_IOS_Reliable_Messaging_ChallengeTests.framework */; };
+		81487076C4A88D5468E3B79A /* Pods_IOS_Reliable_Messaging_ChallengeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81E7A9EF6BAFA4294FD1E2C4 /* Pods_IOS_Reliable_Messaging_ChallengeUITests.framework */; };
+		BB1E74D974E205910208B903 /* Pods_IOS_Reliable_Messaging_Challenge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50872E5A9A11DEE323B93CF9 /* Pods_IOS_Reliable_Messaging_Challenge.framework */; };
 		C4576DAC22B653E200B960D7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4576DAB22B653E200B960D7 /* AppDelegate.swift */; };
 		C4576DAE22B653E200B960D7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4576DAD22B653E200B960D7 /* ViewController.swift */; };
 		C4576DB122B653E200B960D7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4576DAF22B653E200B960D7 /* Main.storyboard */; };
@@ -34,6 +37,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1F5231132295119C15E7E8E4 /* Pods-IOS Reliable Messaging Challenge.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IOS Reliable Messaging Challenge.debug.xcconfig"; path = "Target Support Files/Pods-IOS Reliable Messaging Challenge/Pods-IOS Reliable Messaging Challenge.debug.xcconfig"; sourceTree = "<group>"; };
+		32E5FC4B8454FAB4359DB3B8 /* Pods-IOS Reliable Messaging ChallengeUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IOS Reliable Messaging ChallengeUITests.debug.xcconfig"; path = "Target Support Files/Pods-IOS Reliable Messaging ChallengeUITests/Pods-IOS Reliable Messaging ChallengeUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		50872E5A9A11DEE323B93CF9 /* Pods_IOS_Reliable_Messaging_Challenge.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IOS_Reliable_Messaging_Challenge.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		52960C25442CC4ACD4AB1D6F /* Pods-IOS Reliable Messaging ChallengeUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IOS Reliable Messaging ChallengeUITests.release.xcconfig"; path = "Target Support Files/Pods-IOS Reliable Messaging ChallengeUITests/Pods-IOS Reliable Messaging ChallengeUITests.release.xcconfig"; sourceTree = "<group>"; };
+		7A60897AFE7797B457F6C427 /* Pods-IOS Reliable Messaging ChallengeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IOS Reliable Messaging ChallengeTests.release.xcconfig"; path = "Target Support Files/Pods-IOS Reliable Messaging ChallengeTests/Pods-IOS Reliable Messaging ChallengeTests.release.xcconfig"; sourceTree = "<group>"; };
+		81E7A9EF6BAFA4294FD1E2C4 /* Pods_IOS_Reliable_Messaging_ChallengeUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IOS_Reliable_Messaging_ChallengeUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		82D3740404A67BF3159531DC /* Pods-IOS Reliable Messaging ChallengeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IOS Reliable Messaging ChallengeTests.debug.xcconfig"; path = "Target Support Files/Pods-IOS Reliable Messaging ChallengeTests/Pods-IOS Reliable Messaging ChallengeTests.debug.xcconfig"; sourceTree = "<group>"; };
 		C4576DA822B653E200B960D7 /* IOS Reliable Messaging Challenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "IOS Reliable Messaging Challenge.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4576DAB22B653E200B960D7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C4576DAD22B653E200B960D7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -47,6 +57,8 @@
 		C4576DC722B653E300B960D7 /* IOS Reliable Messaging ChallengeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "IOS Reliable Messaging ChallengeUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4576DCB22B653E300B960D7 /* IOS_Reliable_Messaging_ChallengeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOS_Reliable_Messaging_ChallengeUITests.swift; sourceTree = "<group>"; };
 		C4576DCD22B653E300B960D7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CFF34F13AC935EAE2004E5ED /* Pods_IOS_Reliable_Messaging_ChallengeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IOS_Reliable_Messaging_ChallengeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D96AA350D7DE6818F2161D69 /* Pods-IOS Reliable Messaging Challenge.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IOS Reliable Messaging Challenge.release.xcconfig"; path = "Target Support Files/Pods-IOS Reliable Messaging Challenge/Pods-IOS Reliable Messaging Challenge.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +66,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BB1E74D974E205910208B903 /* Pods_IOS_Reliable_Messaging_Challenge.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,6 +74,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2D50E716AD808909769F9705 /* Pods_IOS_Reliable_Messaging_ChallengeTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,12 +82,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				81487076C4A88D5468E3B79A /* Pods_IOS_Reliable_Messaging_ChallengeUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		009804AB78ABCFE24D5375AA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				50872E5A9A11DEE323B93CF9 /* Pods_IOS_Reliable_Messaging_Challenge.framework */,
+				CFF34F13AC935EAE2004E5ED /* Pods_IOS_Reliable_Messaging_ChallengeTests.framework */,
+				81E7A9EF6BAFA4294FD1E2C4 /* Pods_IOS_Reliable_Messaging_ChallengeUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		6DE371D075E689D5D07B2EE2 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1F5231132295119C15E7E8E4 /* Pods-IOS Reliable Messaging Challenge.debug.xcconfig */,
+				D96AA350D7DE6818F2161D69 /* Pods-IOS Reliable Messaging Challenge.release.xcconfig */,
+				82D3740404A67BF3159531DC /* Pods-IOS Reliable Messaging ChallengeTests.debug.xcconfig */,
+				7A60897AFE7797B457F6C427 /* Pods-IOS Reliable Messaging ChallengeTests.release.xcconfig */,
+				32E5FC4B8454FAB4359DB3B8 /* Pods-IOS Reliable Messaging ChallengeUITests.debug.xcconfig */,
+				52960C25442CC4ACD4AB1D6F /* Pods-IOS Reliable Messaging ChallengeUITests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		C4576D9F22B653E100B960D7 = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +120,8 @@
 				C4576DBF22B653E300B960D7 /* IOS Reliable Messaging ChallengeTests */,
 				C4576DCA22B653E300B960D7 /* IOS Reliable Messaging ChallengeUITests */,
 				C4576DA922B653E200B960D7 /* Products */,
+				6DE371D075E689D5D07B2EE2 /* Pods */,
+				009804AB78ABCFE24D5375AA /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -132,9 +173,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C4576DD022B653E300B960D7 /* Build configuration list for PBXNativeTarget "IOS Reliable Messaging Challenge" */;
 			buildPhases = (
+				6B8433DF93569FECE270BB8B /* [CP] Check Pods Manifest.lock */,
 				C4576DA422B653E100B960D7 /* Sources */,
 				C4576DA522B653E100B960D7 /* Frameworks */,
 				C4576DA622B653E100B960D7 /* Resources */,
+				004309E06138F65AE4343CD1 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -149,6 +192,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C4576DD322B653E300B960D7 /* Build configuration list for PBXNativeTarget "IOS Reliable Messaging ChallengeTests" */;
 			buildPhases = (
+				A5082BDC64ED3192482FAE9F /* [CP] Check Pods Manifest.lock */,
 				C4576DB822B653E300B960D7 /* Sources */,
 				C4576DB922B653E300B960D7 /* Frameworks */,
 				C4576DBA22B653E300B960D7 /* Resources */,
@@ -167,6 +211,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C4576DD622B653E300B960D7 /* Build configuration list for PBXNativeTarget "IOS Reliable Messaging ChallengeUITests" */;
 			buildPhases = (
+				3452D94556F2168C79E82B6C /* [CP] Check Pods Manifest.lock */,
 				C4576DC322B653E300B960D7 /* Sources */,
 				C4576DC422B653E300B960D7 /* Frameworks */,
 				C4576DC522B653E300B960D7 /* Resources */,
@@ -250,6 +295,107 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		004309E06138F65AE4343CD1 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-IOS Reliable Messaging Challenge/Pods-IOS Reliable Messaging Challenge-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-IOS Reliable Messaging Challenge/Pods-IOS Reliable Messaging Challenge-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3452D94556F2168C79E82B6C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-IOS Reliable Messaging ChallengeUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6B8433DF93569FECE270BB8B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-IOS Reliable Messaging Challenge-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A5082BDC64ED3192482FAE9F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-IOS Reliable Messaging ChallengeTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		C4576DA422B653E100B960D7 /* Sources */ = {
@@ -430,6 +576,7 @@
 		};
 		C4576DD122B653E300B960D7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1F5231132295119C15E7E8E4 /* Pods-IOS Reliable Messaging Challenge.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -448,6 +595,7 @@
 		};
 		C4576DD222B653E300B960D7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D96AA350D7DE6818F2161D69 /* Pods-IOS Reliable Messaging Challenge.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -466,6 +614,7 @@
 		};
 		C4576DD422B653E300B960D7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 82D3740404A67BF3159531DC /* Pods-IOS Reliable Messaging ChallengeTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -487,6 +636,7 @@
 		};
 		C4576DD522B653E300B960D7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7A60897AFE7797B457F6C427 /* Pods-IOS Reliable Messaging ChallengeTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -508,6 +658,7 @@
 		};
 		C4576DD722B653E300B960D7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 32E5FC4B8454FAB4359DB3B8 /* Pods-IOS Reliable Messaging ChallengeUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -528,6 +679,7 @@
 		};
 		C4576DD822B653E300B960D7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 52960C25442CC4ACD4AB1D6F /* Pods-IOS Reliable Messaging ChallengeUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
