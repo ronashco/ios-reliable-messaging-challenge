@@ -10,6 +10,7 @@
 		2D50E716AD808909769F9705 /* Pods_IOS_Reliable_Messaging_ChallengeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFF34F13AC935EAE2004E5ED /* Pods_IOS_Reliable_Messaging_ChallengeTests.framework */; };
 		81487076C4A88D5468E3B79A /* Pods_IOS_Reliable_Messaging_ChallengeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81E7A9EF6BAFA4294FD1E2C4 /* Pods_IOS_Reliable_Messaging_ChallengeUITests.framework */; };
 		BB1E74D974E205910208B903 /* Pods_IOS_Reliable_Messaging_Challenge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50872E5A9A11DEE323B93CF9 /* Pods_IOS_Reliable_Messaging_Challenge.framework */; };
+		C42853D122BBF64C008A7E83 /* ExponentialBackoffUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = C42853D022BBF64C008A7E83 /* ExponentialBackoffUtility.swift */; };
 		C4431D0322BAA20C0045413F /* MessagingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4431D0222BAA20C0045413F /* MessagingService.swift */; };
 		C4431D0522BAA5100045413F /* MessagingServiceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4431D0422BAA5100045413F /* MessagingServiceController.swift */; };
 		C4576DAC22B653E200B960D7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4576DAB22B653E200B960D7 /* AppDelegate.swift */; };
@@ -49,6 +50,7 @@
 		7A60897AFE7797B457F6C427 /* Pods-IOS Reliable Messaging ChallengeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IOS Reliable Messaging ChallengeTests.release.xcconfig"; path = "Target Support Files/Pods-IOS Reliable Messaging ChallengeTests/Pods-IOS Reliable Messaging ChallengeTests.release.xcconfig"; sourceTree = "<group>"; };
 		81E7A9EF6BAFA4294FD1E2C4 /* Pods_IOS_Reliable_Messaging_ChallengeUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IOS_Reliable_Messaging_ChallengeUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		82D3740404A67BF3159531DC /* Pods-IOS Reliable Messaging ChallengeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IOS Reliable Messaging ChallengeTests.debug.xcconfig"; path = "Target Support Files/Pods-IOS Reliable Messaging ChallengeTests/Pods-IOS Reliable Messaging ChallengeTests.debug.xcconfig"; sourceTree = "<group>"; };
+		C42853D022BBF64C008A7E83 /* ExponentialBackoffUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExponentialBackoffUtility.swift; sourceTree = "<group>"; };
 		C4431D0222BAA20C0045413F /* MessagingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagingService.swift; sourceTree = "<group>"; };
 		C4431D0422BAA5100045413F /* MessagingServiceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagingServiceController.swift; sourceTree = "<group>"; };
 		C4576DA822B653E200B960D7 /* IOS Reliable Messaging Challenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "IOS Reliable Messaging Challenge.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -157,6 +159,7 @@
 				C482FE7A22B65C4F00B25CEB /* ReliableMessagingLibrary.swift */,
 				C4431D0222BAA20C0045413F /* MessagingService.swift */,
 				C4431D0422BAA5100045413F /* MessagingServiceController.swift */,
+				C42853D022BBF64C008A7E83 /* ExponentialBackoffUtility.swift */,
 			);
 			path = "IOS Reliable Messaging Challenge";
 			sourceTree = "<group>";
@@ -425,6 +428,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C4431D0322BAA20C0045413F /* MessagingService.swift in Sources */,
+				C42853D122BBF64C008A7E83 /* ExponentialBackoffUtility.swift in Sources */,
 				C482FE7E22B661BB00B25CEB /* ServerURL.swift in Sources */,
 				C4576DAE22B653E200B960D7 /* MainViewController.swift in Sources */,
 				C482FE8022B664F900B25CEB /* Message.swift in Sources */,

@@ -11,23 +11,23 @@ import RealmSwift
 
 class ReliableMessagingLibrary {
     
-    let realm: Realm
+    let mainRealm: Realm
     var running: Bool
     var urlIndex: Int
     var messageIndex: Int
     
     init(realm: Realm) {
-        self.realm = realm
+        self.mainRealm = realm
         self.running = false
         
-        let sentMessagesQuery = self.realm.objects(Message.self).filter("sent == true")
+        let sentMessagesQuery = self.mainRealm.objects(Message.self).filter("sent == true")
         for sentMessage in sentMessagesQuery {
             try! realm.write {
                 realm.delete(sentMessage)
             }
         }
         
-        let urlsQuery = self.realm.objects(ServerURL.self)
+        let urlsQuery = self.mainRealm.objects(ServerURL.self)
         for serverURL in urlsQuery {
             if serverURL.messages.count == 0 {
                 try! realm.write {
@@ -36,8 +36,8 @@ class ReliableMessagingLibrary {
             }
         }
         
-        self.urlIndex = self.realm.objects(ServerURL.self).max(ofProperty: "id") ?? 0
-        self.messageIndex = self.realm.objects(Message.self).max(ofProperty: "id") ?? 0
+        self.urlIndex = self.mainRealm.objects(ServerURL.self).max(ofProperty: "id") ?? 0
+        self.messageIndex = self.mainRealm.objects(Message.self).max(ofProperty: "id") ?? 0
     }
     
     func start() {
@@ -45,22 +45,27 @@ class ReliableMessagingLibrary {
             fatalError("invalid state")
         }
         
-        self.running = true
-        let serverURLs = self.realm.objects(ServerURL.self)
         
-        for serverURL in serverURLs {
-            DispatchQueue.global(qos: .userInitiated).async {
-                self.handleURL(serverURL: serverURL)
-
-                DispatchQueue.main.async {
-                    // MARK: TODO -> Update the UI
+        let serverURLs = self.mainRealm.objects(ServerURL.self)
+        if serverURLs.count > 0 {
+            self.running = true
+            
+            for serverURL in serverURLs {
+                let url = serverURL.url
+                DispatchQueue.global(qos: .userInitiated).async {
+                    self.handleURL(url: url, realm: try! Realm())
+                    
+                    DispatchQueue.main.async {
+                        // MARK: TODO -> Update the UI
+                    }
                 }
             }
         }
+        
     }
     
     func sendMessage(url: String, message: [String: String]) {
-        let queryResult = self.realm.objects(ServerURL.self).filter("url == \(url)")
+        let queryResult = self.mainRealm.objects(ServerURL.self).filter("url == %@", url)
         
         guard queryResult.count <= 1 else {
             fatalError("invalid state")
@@ -68,19 +73,19 @@ class ReliableMessagingLibrary {
         
         if let serverURL = queryResult.first {
             let newMessage = Message(id: self.messageIndex + 1, message: message, serverURL: serverURL)
-            try! self.realm.write {
-                self.realm.add(newMessage)
+            try! self.mainRealm.write {
+                self.mainRealm.add(newMessage)
             }
         } else {
             let serverURL = ServerURL(id: self.urlIndex + 1, url: url)
             let newMessage = Message(id: self.messageIndex + 1, message: message, serverURL: serverURL)
-            try! self.realm.write {
-                self.realm.add(serverURL)
+            try! self.mainRealm.write {
+                self.mainRealm.add(serverURL)
             }
             self.urlIndex += 1
             
-            try! self.realm.write {
-                self.realm.add(newMessage)
+            try! self.mainRealm.write {
+                self.mainRealm.add(newMessage)
             }
         }
         
@@ -90,13 +95,36 @@ class ReliableMessagingLibrary {
         }
     }
     
-    private func handleURL(serverURL: ServerURL) {
-        let message = serverURL.messages.filter("sent == false").min(by: {(first, second) in
+    private func handleURL(url: String, realm: Realm) {
+        let serverURL = realm.objects(ServerURL.self).filter("url == %@", url).first!
+        let message = realm.objects(Message.self).filter("serverURL == %@ && sent == false", serverURL).min(by: {(first, second) in
             guard first.id != second.id else {
                 fatalError("invalid state")
             }
             
             return first.id < second.id
         })
+        
+        if let _message = message {
+            var params = [String: String]()
+            for param in _message.message {
+                params[param.key] = param.value
+            }
+            
+            MessagingServiceController().send(serverAddress: serverURL.url, message: params, successHandler: {
+                try! realm.write {
+                    _message.sendDone()
+                }
+                
+                self.handleURL(url: url, realm: realm)
+            }, errorHandler: {(errorMessage) in
+                
+            })
+        } else {
+            let unsentMessages = realm.objects(Message.self).filter("sent == false")
+            if unsentMessages.count == 0 {
+                self.running = false
+            }
+        }
     }
 }
