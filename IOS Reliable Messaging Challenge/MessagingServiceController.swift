@@ -13,8 +13,8 @@ import SwiftyJSON
 class MessagingServiceController {
     let moyaProvider: MoyaProvider<MessagingService>
     
-    init() {
-        self.moyaProvider = MoyaProvider<MessagingService>()
+    init(thread: DispatchQueue) {
+        self.moyaProvider = MoyaProvider<MessagingService>(callbackQueue: thread)
     }
     
     func send(serverAddress: String, message: [String: String], successHandler: @escaping () -> (), errorHandler: @escaping (String) -> ()) {
