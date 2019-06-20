@@ -149,17 +149,16 @@
 		C4576DAA22B653E200B960D7 /* IOS Reliable Messaging Challenge */ = {
 			isa = PBXGroup;
 			children = (
+				C468E70622BC209F00EE4A1F /* Utilities */,
+				C468E70522BC208900EE4A1F /* ServiceControllers */,
+				C468E70422BC207900EE4A1F /* Services */,
+				C468E70322BC204800EE4A1F /* Views */,
+				C468E70222BC1FAC00EE4A1F /* Storyboards */,
 				C482FE7C22B6619000B25CEB /* Models */,
 				C4576DAB22B653E200B960D7 /* AppDelegate.swift */,
-				C4576DAD22B653E200B960D7 /* MainViewController.swift */,
-				C4576DAF22B653E200B960D7 /* Main.storyboard */,
 				C4576DB222B653E300B960D7 /* Assets.xcassets */,
-				C4576DB422B653E300B960D7 /* LaunchScreen.storyboard */,
 				C4576DB722B653E300B960D7 /* Info.plist */,
 				C482FE7A22B65C4F00B25CEB /* ReliableMessagingLibrary.swift */,
-				C4431D0222BAA20C0045413F /* MessagingService.swift */,
-				C4431D0422BAA5100045413F /* MessagingServiceController.swift */,
-				C42853D022BBF64C008A7E83 /* ExponentialBackoffUtility.swift */,
 			);
 			path = "IOS Reliable Messaging Challenge";
 			sourceTree = "<group>";
@@ -180,6 +179,47 @@
 				C4576DCD22B653E300B960D7 /* Info.plist */,
 			);
 			path = "IOS Reliable Messaging ChallengeUITests";
+			sourceTree = "<group>";
+		};
+		C468E70222BC1FAC00EE4A1F /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				C4576DAF22B653E200B960D7 /* Main.storyboard */,
+				C4576DB422B653E300B960D7 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		C468E70322BC204800EE4A1F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				C4576DAD22B653E200B960D7 /* MainViewController.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		C468E70422BC207900EE4A1F /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				C4431D0222BAA20C0045413F /* MessagingService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		C468E70522BC208900EE4A1F /* ServiceControllers */ = {
+			isa = PBXGroup;
+			children = (
+				C4431D0422BAA5100045413F /* MessagingServiceController.swift */,
+			);
+			path = ServiceControllers;
+			sourceTree = "<group>";
+		};
+		C468E70622BC209F00EE4A1F /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				C42853D022BBF64C008A7E83 /* ExponentialBackoffUtility.swift */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 		C482FE7C22B6619000B25CEB /* Models */ = {

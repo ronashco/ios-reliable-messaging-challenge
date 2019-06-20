@@ -52,7 +52,7 @@ class ReliableMessagingLibrary {
             
             for serverURL in serverURLs {
                 let url = serverURL.url
-                let thread = DispatchQueue(label: url, qos: .utility)
+                let thread = DispatchQueue(label: url, qos: .background)
                 thread.async {
                     let realm = try! Realm()
                     self.handleURL(url: url, realm: realm, failedTimes: 0, thread: thread)
@@ -98,6 +98,7 @@ class ReliableMessagingLibrary {
     }
     
     private func handleURL(url: String, realm: Realm, failedTimes: Int, thread: DispatchQueue) {
+        print("in \(#function)")
         let serverURL = realm.objects(ServerURL.self).filter("url == %@", url).first!
         let message = realm.objects(Message.self).filter("serverURL == %@ && sent == false", serverURL).min(by: {(first, second) in
             guard first.id != second.id else {
