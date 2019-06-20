@@ -52,13 +52,13 @@ class ReliableMessagingLibrary {
             
             for serverURL in serverURLs {
                 let url = serverURL.url
-                DispatchQueue.global(qos: .userInitiated).async {
-                    self.handleURL(url: url, realm: try! Realm())
-                    
-                    DispatchQueue.main.async {
-                        // MARK: TODO -> Update the UI
-                    }
-                }
+//                DispatchQueue.global(qos: .userInitiated).async {
+                    self.handleURL(url: url, /*realm: try! Realm(), */failedTimes: 0)
+//
+//                    DispatchQueue.main.async {
+//                        // MARK: TODO -> Update the UI
+//                    }
+//                }
             }
         }
         
@@ -95,9 +95,12 @@ class ReliableMessagingLibrary {
         }
     }
     
-    private func handleURL(url: String, realm: Realm) {
-        let serverURL = realm.objects(ServerURL.self).filter("url == %@", url).first!
-        let message = realm.objects(Message.self).filter("serverURL == %@ && sent == false", serverURL).min(by: {(first, second) in
+    private func handleURL(url: String, /*realm: Realm, */failedTimes: Int) {
+//        if Thread.current.isMainThread {
+//            fatalError("ops")
+//        }
+        let serverURL = self.mainRealm.objects(ServerURL.self).filter("url == %@", url).first!
+        let message = self.mainRealm.objects(Message.self).filter("serverURL == %@ && sent == false", serverURL).min(by: {(first, second) in
             guard first.id != second.id else {
                 fatalError("invalid state")
             }
@@ -111,19 +114,30 @@ class ReliableMessagingLibrary {
                 params[param.key] = param.value
             }
             
+            print("sending")
             MessagingServiceController().send(serverAddress: serverURL.url, message: params, successHandler: {
-                try! realm.write {
+//                if Thread.current.isMainThread {
+//                    fatalError("ops")
+//                }
+                print()
+                try! self.mainRealm.write {
                     _message.sendDone()
+//                    _message.sent = true
                 }
                 
-                self.handleURL(url: url, realm: realm)
+                print("success")
+                self.handleURL(url: url, /*realm: realm, */failedTimes: 0)
             }, errorHandler: {(errorMessage) in
-                
+                let delayTime = ExponentialBackoffUtility.getDelayTimeForCollision(collision: failedTimes + 1)
+                print("failed")
+                sleep(UInt32(delayTime))
+                self.handleURL(url: url, /*realm: realm, */failedTimes: failedTimes + 1)
             })
         } else {
-            let unsentMessages = realm.objects(Message.self).filter("sent == false")
+            let unsentMessages = self.mainRealm.objects(Message.self).filter("sent == false")
             if unsentMessages.count == 0 {
                 self.running = false
+                print("done")
             }
         }
     }
