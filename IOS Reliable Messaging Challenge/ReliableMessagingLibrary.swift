@@ -9,12 +9,18 @@
 import Foundation
 import RealmSwift
 
+protocol ReliableMessagingLibraryDelegate {
+    func sendMessageDone(url: String, message: [String: String])
+    func allMessagesSuccessfullySent()
+}
+
 class ReliableMessagingLibrary {
     
     let mainRealm: Realm
     var running: Bool
     var urlIndex: Int
     var messageIndex: Int
+    var delegate: ReliableMessagingLibraryDelegate?
     
     init(realm: Realm) {
         self.mainRealm = realm
@@ -116,8 +122,8 @@ class ReliableMessagingLibrary {
             
             MessagingServiceController(thread: thread).send(serverAddress: serverURL.url, message: params, successHandler: {
                 let newRealm = try! Realm()
-                let newServerURL = newRealm.objects(ServerURL.self).filter("url == %@", url).first!
-                guard let messageInNewRealm = newRealm.objects(Message.self).filter("serverURL == %@ && sent == false", newServerURL).min(by: {(first, second) in
+                let serverURLInNewRealm = newRealm.objects(ServerURL.self).filter("url == %@", url).first!
+                guard let messageInNewRealm = newRealm.objects(Message.self).filter("serverURL == %@ && sent == false", serverURLInNewRealm).min(by: {(first, second) in
                     guard first.id != second.id else {
                         fatalError("invalid state")
                     }
@@ -131,6 +137,11 @@ class ReliableMessagingLibrary {
                     messageInNewRealm.sendDone()
                 }
                 
+                var newParams = [String: String]()
+                for param in messageInNewRealm.message {
+                    newParams[param.key] = param.value
+                }
+                self.delegate?.sendMessageDone(url: serverURLInNewRealm.url, message: newParams)
                 self.handleURL(url: url, realm: newRealm, failedTimes: 0, thread: thread)
             }, errorHandler: {(errorMessage) in
                 let delayTime = ExponentialBackoffUtility.getDelayTimeForCollision(collision: failedTimes + 1)
@@ -143,6 +154,7 @@ class ReliableMessagingLibrary {
             let unsentMessages = realm.objects(Message.self).filter("sent == false")
             if unsentMessages.count == 0 {
                 self.running = false
+                self.delegate?.allMessagesSuccessfullySent()
                 print("done")
             }
         }

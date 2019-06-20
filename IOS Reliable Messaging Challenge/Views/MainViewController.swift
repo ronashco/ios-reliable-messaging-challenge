@@ -18,6 +18,7 @@ class MainViewController: UIViewController {
        
         let realm = try! Realm()
         self.messageLibrary = ReliableMessagingLibrary(realm: realm)
+        self.messageLibrary?.delegate = self
         self.messageLibrary?.start()
         
         self.messageLibrary?.sendMessage(url: "https://challenge.ronash.co/reliable-messaging", message: ["param1": "hello", "param2": "hey", "param3": "yo"])
@@ -25,6 +26,16 @@ class MainViewController: UIViewController {
         self.messageLibrary?.sendMessage(url: "https://challenge.ronash.co/reliable-messaging", message: ["param1": "hallow"])
         
         self.messageLibrary?.sendMessage(url: "https://challenge.ronash.co/reliable-messaging", message: ["param1": "lllll", "param2": "marhaba", "param3": "salam"])
+    }
+}
+
+extension MainViewController: ReliableMessagingLibraryDelegate {
+    func sendMessageDone(url: String, message: [String : String]) {
+        // MARK: TODO
+    }
+    
+    func allMessagesSuccessfullySent() {
+        // MARK: TODO
     }
 }
 
