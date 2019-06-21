@@ -31,6 +31,11 @@ class MainViewModel {
         
         return jsonFormatMessage
     }
+    
+    func allMessagesSuccessfullySent() {
+        let alertMessage = "All messages sent successfully"
+        self.vc.showToastMessage(message: alertMessage, duration: 2, position: .top)
+    }
 }
 
 // messageKeysAndValuesTableView related functionalities
@@ -55,6 +60,14 @@ extension MainViewModel {
         }
     }
     
+    func getKeyForParameter(index: Int) -> String {
+        return self.message[index].key
+    }
+    
+    func getValueForParameter(index: Int) -> String {
+        return self.message[index].value
+    }
+    
     func isAddParameterButtonAvailable() -> Bool {
         for param in self.message {
             if param.key.isEmpty || param.value.isEmpty {
@@ -63,6 +76,10 @@ extension MainViewModel {
         }
         
         return true
+    }
+    
+    func isRemoveParameterButtonAvailable() -> Bool {
+        return self.message.count > 1
     }
     
     func getSentMessageURL(index: Int) -> String {
@@ -128,8 +145,19 @@ extension MainViewModel {
         }
     }
     
-    func allMessagesSuccessfullySent() {
-        let alertMessage = "All messages sent successfully"
-        self.vc.showToastMessage(message: alertMessage, duration: 2, position: .top)
+    func sendMessageTableViewCellWantsToSendMessage() {
+        // MARK: TODO
+    }
+    
+    func sendMessageTableViewCellWantsToAddParameter() {
+        self.message.append((key: "", value: ""))
+        self.vc.reloadParameters()
+        self.vc.reloadAddParameterAvailability()
+    }
+    
+    func sendMessageTableViewCellWantsToRemoveParameter() {
+        self.message.removeLast()
+        self.vc.reloadParameters()
+        self.vc.reloadAddParameterAvailability()
     }
 }

@@ -11,6 +11,7 @@ import RealmSwift
 import Toast_Swift
 
 protocol MainViewControllerProtocol {
+    func reloadParameters()
     func reloadAddParameterAvailability()
     func reloadSentMessages()
     func showToastMessage(message: String, duration: TimeInterval, position: ToastPosition)
@@ -45,6 +46,7 @@ class MainViewController: UIViewController {
         
         self.messageKeysAndValuesTableView.delegate = self
         self.messageKeysAndValuesTableView.dataSource = self
+        self.messageKeysAndValuesTableView.allowsSelection = false
         self.messageKeysAndValuesTableView.register(UINib(nibName: "MessageKeyValueTableViewCell", bundle: nil), forCellReuseIdentifier: "MessageKeyValueTableViewCell")
         self.messageKeysAndValuesTableView.register(UINib(nibName: "SendMessageTableViewCell", bundle: nil), forCellReuseIdentifier: "SendMessageTableViewCell")
         self.messageKeysAndValuesTableView.register(UINib(nibName: "MessageTableViewCell", bundle: nil), forCellReuseIdentifier: "MessageTableViewCell")
@@ -66,6 +68,10 @@ class MainViewController: UIViewController {
 }
 
 extension MainViewController: MainViewControllerProtocol {
+    func reloadParameters() {
+        self.messageKeysAndValuesTableView.reloadSections([0], with: .none)
+    }
+    
     func reloadAddParameterAvailability() {
         self.messageKeysAndValuesTableView.reloadRows(at: [IndexPath(row: 0, section: 1)], with: .none)
     }
@@ -154,6 +160,8 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
         switch indexPath.section {
         case 0:
             let cell = tableView.dequeueReusableCell(withIdentifier: "MessageKeyValueTableViewCell", for: indexPath) as! MessageKeyValueTableViewCell
+            cell.key = viewModel.getKeyForParameter(index: indexPath.row)
+            cell.value = viewModel.getValueForParameter(index: indexPath.row)
             cell.tag = indexPath.row
             cell.delegate = self
             return cell
@@ -161,6 +169,7 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
         case 1:
             let cell = tableView.dequeueReusableCell(withIdentifier: "SendMessageTableViewCell", for: indexPath) as! SendMessageTableViewCell
             cell.canAddParameter = viewModel.isAddParameterButtonAvailable()
+            cell.canRemoveParameter = viewModel.isRemoveParameterButtonAvailable()
             cell.delegate = self
             return cell
             
@@ -197,11 +206,27 @@ extension MainViewController: MessageKeyValueTableViewCellDelegate {
 
 extension MainViewController: SendMessageTableViewCellDelegate {
     func sendMessageTableViewCellWantsToSendMessage() {
-        // MARK: TODO
+        guard let viewModel = self.mainViewModel else {
+            fatalError("invalid state for mainViewModel variable")
+        }
+        
+        viewModel.sendMessageTableViewCellWantsToSendMessage()
     }
     
     func sendMessageTableViewCellWantsToAddParameter() {
-        // MARK: TODO
+        guard let viewModel = self.mainViewModel else {
+            fatalError("invalid state for mainViewModel variable")
+        }
+        
+        viewModel.sendMessageTableViewCellWantsToAddParameter()
+    }
+    
+    func sendMessageTableViewCellWantsToRemoveParameter() {
+        guard let viewModel = self.mainViewModel else {
+            fatalError("invalid state for mainViewModel variable")
+        }
+        
+        viewModel.sendMessageTableViewCellWantsToRemoveParameter()
     }
 }
 

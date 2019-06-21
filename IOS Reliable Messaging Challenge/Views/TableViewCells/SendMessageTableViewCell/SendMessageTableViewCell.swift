@@ -11,11 +11,13 @@ import UIKit
 protocol SendMessageTableViewCellDelegate {
     func sendMessageTableViewCellWantsToSendMessage()
     func sendMessageTableViewCellWantsToAddParameter()
+    func sendMessageTableViewCellWantsToRemoveParameter()
 }
 
 class SendMessageTableViewCell: UITableViewCell {
 
     @IBOutlet var addParameterButton: UIButton!
+    @IBOutlet var removeParameterButton: UIButton!
     
     var delegate: SendMessageTableViewCellDelegate?
     
@@ -29,6 +31,20 @@ class SendMessageTableViewCell: UITableViewCell {
                 self.addParameterButton.isHidden = false
             } else {
                 self.addParameterButton.isHidden = true
+            }
+        }
+    }
+    
+    var canRemoveParameter: Bool? {
+        didSet {
+            guard let _canRemoveParameter = self.canRemoveParameter else {
+                fatalError("invalid state for canRemoveParameter variable")
+            }
+            
+            if _canRemoveParameter {
+                self.removeParameterButton.isHidden = false
+            } else {
+                self.removeParameterButton.isHidden = true
             }
         }
     }
@@ -47,5 +63,9 @@ class SendMessageTableViewCell: UITableViewCell {
     
     @IBAction func addParameterButtonTouchUpInside(_ sender: UIButton) {
         self.delegate?.sendMessageTableViewCellWantsToAddParameter()
+    }
+    
+    @IBAction func removeParameterButtonTouchUpInside(_ sender: UIButton) {
+        self.delegate?.sendMessageTableViewCellWantsToRemoveParameter()
     }
 }

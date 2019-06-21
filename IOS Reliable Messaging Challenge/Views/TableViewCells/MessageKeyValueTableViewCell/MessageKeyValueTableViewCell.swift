@@ -21,6 +21,26 @@ class MessageKeyValueTableViewCell: UITableViewCell {
     
     var delegate: MessageKeyValueTableViewCellDelegate?
     
+    var key: String? {
+        didSet {
+            guard let _key = self.key else {
+                fatalError("invalid state for key variable")
+            }
+            
+            self.keyTextField.text = _key
+        }
+    }
+    
+    var value: String? {
+        didSet {
+            guard let _value = self.value else {
+                fatalError("invalid state for value variable")
+            }
+            
+            self.valueTextField.text = _value
+        }
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         
