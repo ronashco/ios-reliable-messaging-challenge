@@ -20,9 +20,16 @@
 		C4576DB622B653E300B960D7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C4576DB422B653E300B960D7 /* LaunchScreen.storyboard */; };
 		C4576DC122B653E300B960D7 /* IOS_Reliable_Messaging_ChallengeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4576DC022B653E300B960D7 /* IOS_Reliable_Messaging_ChallengeTests.swift */; };
 		C4576DCC22B653E300B960D7 /* IOS_Reliable_Messaging_ChallengeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4576DCB22B653E300B960D7 /* IOS_Reliable_Messaging_ChallengeUITests.swift */; };
+		C468E70922BC337D00EE4A1F /* MessageKeyValueTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C468E70722BC337D00EE4A1F /* MessageKeyValueTableViewCell.swift */; };
+		C468E70A22BC337D00EE4A1F /* MessageKeyValueTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C468E70822BC337D00EE4A1F /* MessageKeyValueTableViewCell.xib */; };
 		C482FE7B22B65C4F00B25CEB /* ReliableMessagingLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = C482FE7A22B65C4F00B25CEB /* ReliableMessagingLibrary.swift */; };
 		C482FE7E22B661BB00B25CEB /* ServerURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = C482FE7D22B661BB00B25CEB /* ServerURL.swift */; };
 		C482FE8022B664F900B25CEB /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = C482FE7F22B664F900B25CEB /* Message.swift */; };
+		C4F0F45822BD392100CDF78A /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4F0F45722BD392100CDF78A /* MainViewModel.swift */; };
+		C4F0F45F22BD497200CDF78A /* SendMessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4F0F45D22BD497200CDF78A /* SendMessageTableViewCell.swift */; };
+		C4F0F46022BD497200CDF78A /* SendMessageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C4F0F45E22BD497200CDF78A /* SendMessageTableViewCell.xib */; };
+		C4F0F46422BD50A200CDF78A /* MessageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4F0F46222BD50A200CDF78A /* MessageTableViewCell.swift */; };
+		C4F0F46522BD50A200CDF78A /* MessageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C4F0F46322BD50A200CDF78A /* MessageTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,9 +73,16 @@
 		C4576DC722B653E300B960D7 /* IOS Reliable Messaging ChallengeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "IOS Reliable Messaging ChallengeUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4576DCB22B653E300B960D7 /* IOS_Reliable_Messaging_ChallengeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOS_Reliable_Messaging_ChallengeUITests.swift; sourceTree = "<group>"; };
 		C4576DCD22B653E300B960D7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C468E70722BC337D00EE4A1F /* MessageKeyValueTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageKeyValueTableViewCell.swift; sourceTree = "<group>"; };
+		C468E70822BC337D00EE4A1F /* MessageKeyValueTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MessageKeyValueTableViewCell.xib; sourceTree = "<group>"; };
 		C482FE7A22B65C4F00B25CEB /* ReliableMessagingLibrary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReliableMessagingLibrary.swift; sourceTree = "<group>"; };
 		C482FE7D22B661BB00B25CEB /* ServerURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerURL.swift; sourceTree = "<group>"; };
 		C482FE7F22B664F900B25CEB /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		C4F0F45722BD392100CDF78A /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		C4F0F45D22BD497200CDF78A /* SendMessageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendMessageTableViewCell.swift; sourceTree = "<group>"; };
+		C4F0F45E22BD497200CDF78A /* SendMessageTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SendMessageTableViewCell.xib; sourceTree = "<group>"; };
+		C4F0F46222BD50A200CDF78A /* MessageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageTableViewCell.swift; sourceTree = "<group>"; };
+		C4F0F46322BD50A200CDF78A /* MessageTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MessageTableViewCell.xib; sourceTree = "<group>"; };
 		CFF34F13AC935EAE2004E5ED /* Pods_IOS_Reliable_Messaging_ChallengeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IOS_Reliable_Messaging_ChallengeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D96AA350D7DE6818F2161D69 /* Pods-IOS Reliable Messaging Challenge.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IOS Reliable Messaging Challenge.release.xcconfig"; path = "Target Support Files/Pods-IOS Reliable Messaging Challenge/Pods-IOS Reliable Messaging Challenge.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -149,6 +163,7 @@
 		C4576DAA22B653E200B960D7 /* IOS Reliable Messaging Challenge */ = {
 			isa = PBXGroup;
 			children = (
+				C4F0F45622BD390600CDF78A /* ViewModels */,
 				C468E70622BC209F00EE4A1F /* Utilities */,
 				C468E70522BC208900EE4A1F /* ServiceControllers */,
 				C468E70422BC207900EE4A1F /* Services */,
@@ -193,7 +208,8 @@
 		C468E70322BC204800EE4A1F /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				C4576DAD22B653E200B960D7 /* MainViewController.swift */,
+				C4F0F45A22BD493000CDF78A /* TableViewCells */,
+				C4F0F45922BD491F00CDF78A /* ViewControllers */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -229,6 +245,59 @@
 				C482FE7F22B664F900B25CEB /* Message.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		C4F0F45622BD390600CDF78A /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				C4F0F45722BD392100CDF78A /* MainViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		C4F0F45922BD491F00CDF78A /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				C4576DAD22B653E200B960D7 /* MainViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		C4F0F45A22BD493000CDF78A /* TableViewCells */ = {
+			isa = PBXGroup;
+			children = (
+				C4F0F46122BD508A00CDF78A /* MessageTableViewCell */,
+				C4F0F45C22BD495500CDF78A /* SendMessageTableViewCell */,
+				C4F0F45B22BD493E00CDF78A /* MessageKeyValueTableViewCell */,
+			);
+			path = TableViewCells;
+			sourceTree = "<group>";
+		};
+		C4F0F45B22BD493E00CDF78A /* MessageKeyValueTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				C468E70722BC337D00EE4A1F /* MessageKeyValueTableViewCell.swift */,
+				C468E70822BC337D00EE4A1F /* MessageKeyValueTableViewCell.xib */,
+			);
+			path = MessageKeyValueTableViewCell;
+			sourceTree = "<group>";
+		};
+		C4F0F45C22BD495500CDF78A /* SendMessageTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				C4F0F45D22BD497200CDF78A /* SendMessageTableViewCell.swift */,
+				C4F0F45E22BD497200CDF78A /* SendMessageTableViewCell.xib */,
+			);
+			path = SendMessageTableViewCell;
+			sourceTree = "<group>";
+		};
+		C4F0F46122BD508A00CDF78A /* MessageTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				C4F0F46222BD50A200CDF78A /* MessageTableViewCell.swift */,
+				C4F0F46322BD50A200CDF78A /* MessageTableViewCell.xib */,
+			);
+			path = MessageTableViewCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -345,8 +414,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				C4576DB622B653E300B960D7 /* LaunchScreen.storyboard in Resources */,
+				C4F0F46522BD50A200CDF78A /* MessageTableViewCell.xib in Resources */,
 				C4576DB322B653E300B960D7 /* Assets.xcassets in Resources */,
+				C468E70A22BC337D00EE4A1F /* MessageKeyValueTableViewCell.xib in Resources */,
 				C4576DB122B653E200B960D7 /* Main.storyboard in Resources */,
+				C4F0F46022BD497200CDF78A /* SendMessageTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -477,8 +549,12 @@
 				C482FE7E22B661BB00B25CEB /* ServerURL.swift in Sources */,
 				C4576DAE22B653E200B960D7 /* MainViewController.swift in Sources */,
 				C482FE8022B664F900B25CEB /* Message.swift in Sources */,
+				C4F0F46422BD50A200CDF78A /* MessageTableViewCell.swift in Sources */,
+				C4F0F45822BD392100CDF78A /* MainViewModel.swift in Sources */,
 				C4431D0522BAA5100045413F /* MessagingServiceController.swift in Sources */,
+				C4F0F45F22BD497200CDF78A /* SendMessageTableViewCell.swift in Sources */,
 				C482FE7B22B65C4F00B25CEB /* ReliableMessagingLibrary.swift in Sources */,
+				C468E70922BC337D00EE4A1F /* MessageKeyValueTableViewCell.swift in Sources */,
 				C4576DAC22B653E200B960D7 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

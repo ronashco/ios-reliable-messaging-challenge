@@ -141,7 +141,10 @@ class ReliableMessagingLibrary {
                 for param in messageInNewRealm.message {
                     newParams[param.key] = param.value
                 }
-                self.delegate?.sendMessageDone(url: serverURLInNewRealm.url, message: newParams)
+                let url = serverURLInNewRealm.url
+                DispatchQueue.main.async {
+                    self.delegate?.sendMessageDone(url: url, message: newParams)
+                }
                 self.handleURL(url: url, realm: newRealm, failedTimes: 0, thread: thread)
             }, errorHandler: {(errorMessage) in
                 let delayTime = ExponentialBackoffUtility.getDelayTimeForCollision(collision: failedTimes + 1)
@@ -154,7 +157,9 @@ class ReliableMessagingLibrary {
             let unsentMessages = realm.objects(Message.self).filter("sent == false")
             if unsentMessages.count == 0 {
                 self.running = false
-                self.delegate?.allMessagesSuccessfullySent()
+                DispatchQueue.main.async {
+                    self.delegate?.allMessagesSuccessfullySent()
+                }
                 print("done")
             }
         }
