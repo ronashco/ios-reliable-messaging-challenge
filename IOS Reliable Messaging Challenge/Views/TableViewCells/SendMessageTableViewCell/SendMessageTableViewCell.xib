@@ -74,6 +74,7 @@
             <connections>
                 <outlet property="addParameterButton" destination="kv3-1Q-f5O" id="grf-sH-R8a"/>
                 <outlet property="removeParameterButton" destination="X9A-PC-VfB" id="KgE-HP-1RI"/>
+                <outlet property="sendButton" destination="R72-kD-tOk" id="dwe-SJ-PXP"/>
             </connections>
             <point key="canvasLocation" x="113.04347826086958" y="84.709821428571431"/>
         </tableViewCell>

@@ -16,10 +16,25 @@ protocol SendMessageTableViewCellDelegate {
 
 class SendMessageTableViewCell: UITableViewCell {
 
+    @IBOutlet var sendButton: UIButton!
     @IBOutlet var addParameterButton: UIButton!
     @IBOutlet var removeParameterButton: UIButton!
     
     var delegate: SendMessageTableViewCellDelegate?
+    
+    var canSend: Bool? {
+        didSet {
+            guard let _canSend = self.canSend else {
+                fatalError("invalid state for canSend variable")
+            }
+            
+            if _canSend {
+                self.sendButton.isHidden = false
+            } else {
+                self.sendButton.isHidden = true
+            }
+        }
+    }
     
     var canAddParameter: Bool? {
         didSet {

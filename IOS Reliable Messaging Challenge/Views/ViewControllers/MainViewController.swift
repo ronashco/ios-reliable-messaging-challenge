@@ -11,10 +11,14 @@ import RealmSwift
 import Toast_Swift
 
 protocol MainViewControllerProtocol {
-    func reloadParameters()
-    func reloadAddParameterAvailability()
+    func addParameter(indexPath: IndexPath)
+    func removeParameter(indexPath: IndexPath)
+    func reloadButtonsAvailability()
     func reloadSentMessages()
     func showToastMessage(message: String, duration: TimeInterval, position: ToastPosition)
+    func giveMessageToReliableMessagingLibrary(url: String, message: [String: String])
+    func resetURLTextView()
+    func reloadParameters()
 }
 
 class MainViewController: UIViewController {
@@ -53,13 +57,7 @@ class MainViewController: UIViewController {
         
         self.messageKeysAndValuesTableView.layer.borderColor = UIColor.black.cgColor
         self.messageKeysAndValuesTableView.layer.borderWidth = 2
-        self.messageKeysAndValuesTableView.layer.cornerRadius = 4
-        
-        self.messageLibrary?.sendMessage(url: "https://challenge.ronash.co/reliable-messaging", message: ["param1": "hello", "param2": "hey", "param3": "yo"])
-        
-        self.messageLibrary?.sendMessage(url: "https://challenge.ronash.co/reliable-messaging", message: ["param1": "hallow"])
-        
-        self.messageLibrary?.sendMessage(url: "https://challenge.ronash.co/reliable-messaging", message: ["param1": "lllll", "param2": "marhaba", "param3": "salam"])
+        self.messageKeysAndValuesTableView.layer.cornerRadius = 4        
     }
     
     private func mainViewModelFactory(realm: Realm) -> MainViewModel {
@@ -68,11 +66,19 @@ class MainViewController: UIViewController {
 }
 
 extension MainViewController: MainViewControllerProtocol {
-    func reloadParameters() {
-        self.messageKeysAndValuesTableView.reloadSections([0], with: .none)
+    func addParameter(indexPath: IndexPath) {
+        self.messageKeysAndValuesTableView.beginUpdates()
+        self.messageKeysAndValuesTableView.insertRows(at: [indexPath], with: .none)
+        self.messageKeysAndValuesTableView.endUpdates()
     }
     
-    func reloadAddParameterAvailability() {
+    func removeParameter(indexPath: IndexPath) {
+        self.messageKeysAndValuesTableView.beginUpdates()
+        self.messageKeysAndValuesTableView.deleteRows(at: [indexPath], with: .none)
+        self.messageKeysAndValuesTableView.endUpdates()
+    }
+    
+    func reloadButtonsAvailability() {
         self.messageKeysAndValuesTableView.reloadRows(at: [IndexPath(row: 0, section: 1)], with: .none)
     }
     
@@ -82,6 +88,19 @@ extension MainViewController: MainViewControllerProtocol {
     
     func showToastMessage(message: String, duration: TimeInterval, position: ToastPosition) {
         self.view.makeToast(message, duration: duration, position: position)
+    }
+    
+    func giveMessageToReliableMessagingLibrary(url: String, message: [String: String]) {
+        self.messageLibrary?.sendMessage(url: url, message: message)
+    }
+    
+    func resetURLTextView() {
+        self.urlTextView.text = self.urlTextViewPlaceHolder
+        self.urlTextView.textColor = UIColor.lightGray
+    }
+    
+    func reloadParameters() {
+        self.messageKeysAndValuesTableView.reloadSections([0], with: .none)
     }
 }
 
@@ -116,6 +135,14 @@ extension MainViewController: UITextViewDelegate {
             textView.text = self.urlTextViewPlaceHolder
             textView.textColor = UIColor.lightGray
         }
+    }
+    
+    func textViewDidChange(_ textView: UITextView) {
+        guard let viewModel = self.mainViewModel else {
+            fatalError("invalid state for mainViewModel variable")
+        }
+        
+        viewModel.urlTextViewDidChange(newText: textView.text)
     }
 }
 
@@ -168,6 +195,7 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
             
         case 1:
             let cell = tableView.dequeueReusableCell(withIdentifier: "SendMessageTableViewCell", for: indexPath) as! SendMessageTableViewCell
+            cell.canSend = viewModel.isSendButtonAvailable()
             cell.canAddParameter = viewModel.isAddParameterButtonAvailable()
             cell.canRemoveParameter = viewModel.isRemoveParameterButtonAvailable()
             cell.delegate = self

@@ -12,12 +12,14 @@ import RealmSwift
 class MainViewModel {
     let vc: MainViewControllerProtocol
     let realm: Realm
+    var url: String
     var message: [(key: String, value: String)]
     var sentMessages: [Message]
     
     init(vc: MainViewControllerProtocol, realm: Realm) {
         self.vc = vc
         self.realm = realm
+        self.url = ""
         self.message = [(key: "", value: "")]
         self.sentMessages = [Message]()
     }
@@ -35,6 +37,15 @@ class MainViewModel {
     func allMessagesSuccessfullySent() {
         let alertMessage = "All messages sent successfully"
         self.vc.showToastMessage(message: alertMessage, duration: 2, position: .top)
+    }
+    
+    func urlTextViewDidChange(newText: String) {
+        let oldURL = self.url
+        self.url = newText
+        
+        if (oldURL.isEmpty && !self.url.isEmpty) || (!oldURL.isEmpty && self.url.isEmpty) {
+            self.vc.reloadButtonsAvailability()
+        }
     }
 }
 
@@ -68,14 +79,14 @@ extension MainViewModel {
         return self.message[index].value
     }
     
+    func isSendButtonAvailable() -> Bool {
+        let lastParam = self.message.last
+        return !self.url.isEmpty && !lastParam!.key.isEmpty && !lastParam!.value.isEmpty
+    }
+    
     func isAddParameterButtonAvailable() -> Bool {
-        for param in self.message {
-            if param.key.isEmpty || param.value.isEmpty {
-                return false
-            }
-        }
-        
-        return true
+        let lastParam = self.message.last
+        return !lastParam!.key.isEmpty && !lastParam!.value.isEmpty
     }
     
     func isRemoveParameterButtonAvailable() -> Bool {
@@ -109,7 +120,7 @@ extension MainViewModel {
         self.message[index] = (key: newKey, value: prevParam.value)
         
         if (oldKey.isEmpty && !newKey.isEmpty) || (!oldKey.isEmpty && newKey.isEmpty) {
-            self.vc.reloadAddParameterAvailability()
+            self.vc.reloadButtonsAvailability()
         }
     }
     
@@ -119,7 +130,7 @@ extension MainViewModel {
         self.message[index] = (key: prevParam.key, value: newValue)
         
         if (oldValue.isEmpty && !newValue.isEmpty) || (!oldValue.isEmpty && newValue.isEmpty) {
-          self.vc.reloadAddParameterAvailability()
+          self.vc.reloadButtonsAvailability()
         }
     }
     
@@ -146,18 +157,29 @@ extension MainViewModel {
     }
     
     func sendMessageTableViewCellWantsToSendMessage() {
-        // MARK: TODO
+        var params = [String: String]()
+        for param in self.message {
+            params[param.key] = param.value
+        }
+        
+        self.vc.giveMessageToReliableMessagingLibrary(url: self.url, message: params)
+        
+        self.vc.resetURLTextView()
+        self.url = ""
+        self.message = [(key: "", value: "")]
+        self.vc.reloadParameters()
+        print()
     }
     
     func sendMessageTableViewCellWantsToAddParameter() {
         self.message.append((key: "", value: ""))
-        self.vc.reloadParameters()
-        self.vc.reloadAddParameterAvailability()
+        self.vc.addParameter(indexPath: IndexPath(row: self.message.count - 1, section: 0))
+        self.vc.reloadButtonsAvailability()
     }
     
     func sendMessageTableViewCellWantsToRemoveParameter() {
         self.message.removeLast()
-        self.vc.reloadParameters()
-        self.vc.reloadAddParameterAvailability()
+        self.vc.removeParameter(indexPath: IndexPath(row: self.message.count, section: 0))
+        self.vc.reloadButtonsAvailability()
     }
 }
