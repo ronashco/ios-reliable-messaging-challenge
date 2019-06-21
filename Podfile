@@ -9,6 +9,7 @@ target 'IOS Reliable Messaging Challenge' do
     pod 'Moya', '~> 13.0'
     pod 'RealmSwift'
     pod 'SwiftyJSON', '~> 4.0'
+    pod 'Toast-Swift', '~> 5.0.0'
 
   target 'IOS Reliable Messaging ChallengeTests' do
     inherit! :search_paths

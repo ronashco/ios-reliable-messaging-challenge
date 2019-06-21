@@ -110,11 +110,10 @@ extension MainViewModel {
         switch UIApplication.shared.applicationState {
         case .background, .inactive:
             fatalError("TODO")
-            self.vc.reloadSentMessages()
             
         case .active:
             let alertMessage = "Message: \n\(self.paramsToJSONString(params: message))\nsent to \(url))"
-            self.vc.showMessageAsAlert(message: alertMessage)
+            self.vc.showToastMessage(message: alertMessage, duration: 0.2, position: .bottom)
             
             self.sentMessages.removeAll()
             let sentMessagesQuery = self.realm.objects(Message.self).filter("sent == true").sorted(byKeyPath: "id", ascending: true)
@@ -127,5 +126,10 @@ extension MainViewModel {
         default:
             break
         }
+    }
+    
+    func allMessagesSuccessfullySent() {
+        let alertMessage = "All messages sent successfully"
+        self.vc.showToastMessage(message: alertMessage, duration: 2, position: .top)
     }
 }

@@ -8,11 +8,12 @@
 
 import UIKit
 import RealmSwift
+import Toast_Swift
 
 protocol MainViewControllerProtocol {
     func reloadAddParameterAvailability()
     func reloadSentMessages()
-    func showMessageAsAlert(message: String)
+    func showToastMessage(message: String, duration: TimeInterval, position: ToastPosition)
 }
 
 class MainViewController: UIViewController {
@@ -73,11 +74,8 @@ extension MainViewController: MainViewControllerProtocol {
         self.messageKeysAndValuesTableView.reloadSections([2], with: .none)
     }
     
-    func showMessageAsAlert(message: String) {
-        let alert = UIAlertController(title: "", message: message, preferredStyle: UIAlertController.Style.alert)
-        let okAction = UIKit.UIAlertAction(title: "باشه", style: UIAlertAction.Style.default)
-        alert.addAction(okAction)
-        self.present(alert, animated: true, completion: nil)
+    func showToastMessage(message: String, duration: TimeInterval, position: ToastPosition) {
+        self.view.makeToast(message, duration: duration, position: position)
     }
 }
 
@@ -91,7 +89,11 @@ extension MainViewController: ReliableMessagingLibraryDelegate {
     }
     
     func allMessagesSuccessfullySent() {
-        // MARK: TODO
+        guard let viewModel = self.mainViewModel else {
+            fatalError("invalid state for mainViewModel variable")
+        }
+        
+        viewModel.allMessagesSuccessfullySent()
     }
 }
 

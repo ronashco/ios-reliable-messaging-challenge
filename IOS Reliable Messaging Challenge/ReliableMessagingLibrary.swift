@@ -61,11 +61,7 @@ class ReliableMessagingLibrary {
                 let thread = DispatchQueue(label: url, qos: .background)
                 thread.async {
                     let realm = try! Realm()
-                    self.handleURL(url: url, realm: realm, failedTimes: 0, thread: thread)
-                    
-//                    DispatchQueue.main.async {
-//                        // MARK: TODO -> Update the UI
-//                    }
+                    self.handleURL(url: url, realm: realm, failedTimes: 0, thread: thread)                    
                 }
             }
         }
