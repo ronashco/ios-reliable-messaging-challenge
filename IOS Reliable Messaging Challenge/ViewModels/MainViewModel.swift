@@ -137,7 +137,13 @@ extension MainViewModel {
     func sendMessageDone(url: String, message: [String : String]) {
         switch UIApplication.shared.applicationState {
         case .background, .inactive:
-            fatalError("TODO")
+            self.sentMessages.removeAll()
+            let sentMessagesQuery = self.realm.objects(Message.self).filter("sent == true").sorted(byKeyPath: "id", ascending: true)
+            for sentMessage in sentMessagesQuery {
+                self.sentMessages.append(sentMessage)
+            }
+            
+            self.vc.reloadSentMessages()
             
         case .active:
             let alertMessage = "Message: \n\(self.paramsToJSONString(params: message))\nsent to \(url))"
