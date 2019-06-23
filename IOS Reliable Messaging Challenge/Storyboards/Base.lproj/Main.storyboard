@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Main View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="MainViewController" customModule="IOS_Reliable_Messaging_Challenge" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="cYG-aQ-2ZU">
+                                <rect key="frame" x="24" y="44" width="327" height="36.5"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" keyboardType="URL"/>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Message" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AuD-gM-lef">
+                                <rect key="frame" x="24" y="88.5" width="69" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="g57-Jk-tKQ">
+                                <rect key="frame" x="24" y="117.5" width="327" height="549.5"/>
+                                <color key="backgroundColor" red="0.0" green="0.98106676339999999" blue="0.57369142770000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="cYG-aQ-2ZU" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="7LL-zo-ofN"/>
+                            <constraint firstItem="cYG-aQ-2ZU" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="24" id="8Ql-1Q-fsp"/>
+                            <constraint firstItem="AuD-gM-lef" firstAttribute="leading" secondItem="cYG-aQ-2ZU" secondAttribute="leading" id="H08-DA-TCa"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="g57-Jk-tKQ" secondAttribute="bottom" id="Ts1-0j-NgV"/>
+                            <constraint firstItem="cYG-aQ-2ZU" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="24" id="XEK-oK-kWT"/>
+                            <constraint firstItem="g57-Jk-tKQ" firstAttribute="trailing" secondItem="cYG-aQ-2ZU" secondAttribute="trailing" id="YOI-wD-cHO"/>
+                            <constraint firstItem="AuD-gM-lef" firstAttribute="top" secondItem="cYG-aQ-2ZU" secondAttribute="bottom" constant="8" id="edO-kR-kV8"/>
+                            <constraint firstItem="g57-Jk-tKQ" firstAttribute="top" secondItem="AuD-gM-lef" secondAttribute="bottom" constant="8" id="qt6-Et-Jm2"/>
+                            <constraint firstItem="g57-Jk-tKQ" firstAttribute="leading" secondItem="cYG-aQ-2ZU" secondAttribute="leading" id="z8m-6e-14s"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="messageKeysAndValuesTableView" destination="g57-Jk-tKQ" id="pR9-vn-M2j"/>
+                        <outlet property="urlTextView" destination="cYG-aQ-2ZU" id="XuS-Fs-o75"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+</document>

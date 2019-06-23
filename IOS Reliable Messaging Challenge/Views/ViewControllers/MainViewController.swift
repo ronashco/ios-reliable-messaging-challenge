@@ -1,0 +1,260 @@
+//
+//  MainViewController.swift
+//  IOS Reliable Messaging Challenge
+//
+//  Created by Jafar Khoshtabiat on 6/16/19.
+//  Copyright © 2019 Pushe. All rights reserved.
+//
+
+import UIKit
+import RealmSwift
+import Toast_Swift
+
+protocol MainViewControllerProtocol {
+    func addParameter(indexPath: IndexPath)
+    func removeParameter(indexPath: IndexPath)
+    func reloadButtonsAvailability()
+    func reloadSentMessages()
+    func showToastMessage(message: String, duration: TimeInterval, position: ToastPosition)
+    func giveMessageToReliableMessagingLibrary(url: String, message: [String: String])
+    func resetURLTextView()
+    func reloadParameters()
+}
+
+class MainViewController: UIViewController {
+    
+    @IBOutlet var urlTextView: UITextView!
+    @IBOutlet var messageKeysAndValuesTableView: UITableView!
+    
+    let urlTextViewPlaceHolder = "Enter server url here"
+    
+    var mainViewModel: MainViewModel?
+    var messageLibrary: ReliableMessagingLibrary?
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+       
+        let realm = try! Realm()
+        self.messageLibrary = ReliableMessagingLibrary(realm: realm)
+        self.messageLibrary?.delegate = self
+        self.messageLibrary?.start()
+        
+        self.mainViewModel = self.mainViewModelFactory(realm: realm)
+        
+        self.urlTextView.text = self.urlTextViewPlaceHolder
+        self.urlTextView.textColor = UIColor.lightGray
+        self.urlTextView.delegate = self
+        self.urlTextView.layer.borderColor = UIColor.black.cgColor
+        self.urlTextView.layer.borderWidth = 2
+        self.urlTextView.layer.cornerRadius = 4
+        
+        self.messageKeysAndValuesTableView.delegate = self
+        self.messageKeysAndValuesTableView.dataSource = self
+        self.messageKeysAndValuesTableView.allowsSelection = false
+        self.messageKeysAndValuesTableView.register(UINib(nibName: "MessageKeyValueTableViewCell", bundle: nil), forCellReuseIdentifier: "MessageKeyValueTableViewCell")
+        self.messageKeysAndValuesTableView.register(UINib(nibName: "SendMessageTableViewCell", bundle: nil), forCellReuseIdentifier: "SendMessageTableViewCell")
+        self.messageKeysAndValuesTableView.register(UINib(nibName: "MessageTableViewCell", bundle: nil), forCellReuseIdentifier: "MessageTableViewCell")
+        
+        self.messageKeysAndValuesTableView.layer.borderColor = UIColor.black.cgColor
+        self.messageKeysAndValuesTableView.layer.borderWidth = 2
+        self.messageKeysAndValuesTableView.layer.cornerRadius = 4        
+    }
+    
+    private func mainViewModelFactory(realm: Realm) -> MainViewModel {
+        return MainViewModel(vc: self, realm: realm)
+    }
+}
+
+extension MainViewController: MainViewControllerProtocol {
+    func addParameter(indexPath: IndexPath) {
+        self.messageKeysAndValuesTableView.beginUpdates()
+        self.messageKeysAndValuesTableView.insertRows(at: [indexPath], with: .none)
+        self.messageKeysAndValuesTableView.endUpdates()
+    }
+    
+    func removeParameter(indexPath: IndexPath) {
+        self.messageKeysAndValuesTableView.beginUpdates()
+        self.messageKeysAndValuesTableView.deleteRows(at: [indexPath], with: .none)
+        self.messageKeysAndValuesTableView.endUpdates()
+    }
+    
+    func reloadButtonsAvailability() {
+        self.messageKeysAndValuesTableView.reloadRows(at: [IndexPath(row: 0, section: 1)], with: .none)
+    }
+    
+    func reloadSentMessages() {
+        self.messageKeysAndValuesTableView.reloadSections([2], with: .none)
+    }
+    
+    func showToastMessage(message: String, duration: TimeInterval, position: ToastPosition) {
+        self.view.makeToast(message, duration: duration, position: position)
+    }
+    
+    func giveMessageToReliableMessagingLibrary(url: String, message: [String: String]) {
+        self.messageLibrary?.sendMessage(url: url, message: message)
+    }
+    
+    func resetURLTextView() {
+        self.urlTextView.text = self.urlTextViewPlaceHolder
+        self.urlTextView.textColor = UIColor.lightGray
+    }
+    
+    func reloadParameters() {
+        self.messageKeysAndValuesTableView.reloadSections([0], with: .none)
+    }
+}
+
+extension MainViewController: ReliableMessagingLibraryDelegate {
+    func sendMessageDone(url: String, message: [String : String]) {
+        guard let viewModel = self.mainViewModel else {
+            fatalError("invalid state for mainViewModel variable")
+        }
+        
+        viewModel.sendMessageDone(url: url, message: message)
+    }
+    
+    func allMessagesSuccessfullySent() {
+        guard let viewModel = self.mainViewModel else {
+            fatalError("invalid state for mainViewModel variable")
+        }
+        
+        viewModel.allMessagesSuccessfullySent()
+    }
+}
+
+extension MainViewController: UITextViewDelegate {
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        if textView.textColor == UIColor.lightGray {
+            textView.text = nil
+            textView.textColor = UIColor.black
+        }
+    }
+    
+    func textViewDidEndEditing(_ textView: UITextView) {
+        if textView.text.isEmpty {
+            textView.text = self.urlTextViewPlaceHolder
+            textView.textColor = UIColor.lightGray
+        }
+    }
+    
+    func textViewDidChange(_ textView: UITextView) {
+        guard let viewModel = self.mainViewModel else {
+            fatalError("invalid state for mainViewModel variable")
+        }
+        
+        viewModel.urlTextViewDidChange(newText: textView.text)
+    }
+}
+
+extension MainViewController: UITableViewDelegate, UITableViewDataSource {
+    func numberOfSections(in tableView: UITableView) -> Int {
+        guard let viewModel = self.mainViewModel else {
+            fatalError("invalid state for mainViewModel variable")
+        }
+        
+        return viewModel.numberOfSectionsOfMessageKeysAndValuesTableView()
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        guard let viewModel = self.mainViewModel else {
+            fatalError("invalid state for mainViewModel variable")
+        }
+        
+        return viewModel.numberOfRowsInSectionOfMessageKeysAndValuesTableView(section: section)
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        switch indexPath.section {
+        case 0:
+            return 50
+            
+        case 1:
+            return 40
+            
+        case 2:
+            return UITableView.automaticDimension
+            
+        default:
+            fatalError("invalid state for section of indexPath")
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let viewModel = self.mainViewModel else {
+            fatalError("invalid state for mainViewModel variable")
+        }
+        
+        switch indexPath.section {
+        case 0:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "MessageKeyValueTableViewCell", for: indexPath) as! MessageKeyValueTableViewCell
+            cell.key = viewModel.getKeyForParameter(index: indexPath.row)
+            cell.value = viewModel.getValueForParameter(index: indexPath.row)
+            cell.tag = indexPath.row
+            cell.delegate = self
+            return cell
+            
+        case 1:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "SendMessageTableViewCell", for: indexPath) as! SendMessageTableViewCell
+            cell.canSend = viewModel.isSendButtonAvailable()
+            cell.canAddParameter = viewModel.isAddParameterButtonAvailable()
+            cell.canRemoveParameter = viewModel.isRemoveParameterButtonAvailable()
+            cell.delegate = self
+            return cell
+            
+        case 2:
+            let cell = tableView.dequeueReusableCell(withIdentifier: "MessageTableViewCell", for: indexPath) as! MessageTableViewCell
+            cell.url = viewModel.getSentMessageURL(index: indexPath.row)
+            cell.message = viewModel.getSentMessage(index: indexPath.row)
+            cell.hideBottomLine = viewModel.shouldHideBottomLineForSentMessageCell(index: indexPath.row)
+            return cell
+            
+        default:
+            fatalError("invalid state for section of indexPath")
+        }
+    }
+}
+
+extension MainViewController: MessageKeyValueTableViewCellDelegate {
+    func messageKeyValueTableViewCellChangedKey(newKey: String, index: Int) {
+        guard let viewModel = self.mainViewModel else {
+            fatalError("invalid state for mainViewModel variable")
+        }
+        
+        viewModel.messageKeyValueTableViewCellChangedKey(newKey: newKey, index: index)
+    }
+    
+    func messageKeyValueTableViewCellChangedValue(newValue: String, index: Int) {
+        guard let viewModel = self.mainViewModel else {
+            fatalError("invalid state for mainViewModel variable")
+        }
+        
+        viewModel.messageKeyValueTableViewCellChangedValue(newValue: newValue, index: index)
+    }
+}
+
+extension MainViewController: SendMessageTableViewCellDelegate {
+    func sendMessageTableViewCellWantsToSendMessage() {
+        guard let viewModel = self.mainViewModel else {
+            fatalError("invalid state for mainViewModel variable")
+        }
+        
+        viewModel.sendMessageTableViewCellWantsToSendMessage()
+    }
+    
+    func sendMessageTableViewCellWantsToAddParameter() {
+        guard let viewModel = self.mainViewModel else {
+            fatalError("invalid state for mainViewModel variable")
+        }
+        
+        viewModel.sendMessageTableViewCellWantsToAddParameter()
+    }
+    
+    func sendMessageTableViewCellWantsToRemoveParameter() {
+        guard let viewModel = self.mainViewModel else {
+            fatalError("invalid state for mainViewModel variable")
+        }
+        
+        viewModel.sendMessageTableViewCellWantsToRemoveParameter()
+    }
+}
+
